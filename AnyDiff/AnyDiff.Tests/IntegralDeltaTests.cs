@@ -88,7 +88,7 @@ namespace AnyDiff.Tests
             var obj2 = new TestObject { LongValue = 5L };
             var diff = provider.ComputeDiff(obj1, obj2);
             Assert.AreEqual(1, diff.Count);
-            Assert.AreEqual(4, diff.First().Delta);
+            Assert.AreEqual(4L, diff.First().Delta);
         }
 
         [TestMethod]

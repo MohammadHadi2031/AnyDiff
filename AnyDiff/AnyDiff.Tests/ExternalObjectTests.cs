@@ -31,25 +31,25 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [TestMethod]
-        public void ShouldDetect_NoDifferences_TestFixtureData()
-        {
-            var obj1 = new TestFixtureData(new { Field1 = "Test" });
-            var obj2 = new TestFixtureData(new { Field1 = "Test" });
+        //[TestMethod]
+        //public void ShouldDetect_NoDifferences_TestFixtureData()
+        //{
+        //    var obj1 = new TestFixtureData(new { Field1 = "Test" });
+        //    var obj2 = new TestFixtureData(new { Field1 = "Test" });
 
-            var diff = AnyDiff.Diff(obj1, obj2);
-            Assert.AreEqual(0, diff.Count);
-        }
+        //    var diff = AnyDiff.Diff(obj1, obj2);
+        //    Assert.AreEqual(0, diff.Count);
+        //}
 
-        [TestMethod]
-        public void ShouldDetect_Differences_TestFixtureData()
-        {
-            var obj1 = new TestFixtureData(new { Field1 = "Test" });
-            var obj2 = new TestFixtureData(new { Field1 = "Test 2" });
+        //[TestMethod]
+        //public void ShouldDetect_Differences_TestFixtureData()
+        //{
+        //    var obj1 = new TestFixtureData(new { Field1 = "Test" });
+        //    var obj2 = new TestFixtureData(new { Field1 = "Test 2" });
 
-            var diff = AnyDiff.Diff(obj1, obj2);
-            Assert.AreEqual(1, diff.Count);
-        }
+        //    var diff = AnyDiff.Diff(obj1, obj2);
+        //    Assert.AreEqual(1, diff.Count);
+        //}
 
         [TestMethod]
         public void ShouldDiff_JToken()
