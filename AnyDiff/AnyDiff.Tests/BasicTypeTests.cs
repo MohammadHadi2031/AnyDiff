@@ -1,14 +1,14 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class BasicTypeTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Date_Delta()
         {
             var provider = new DiffProvider();
@@ -20,7 +20,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(TimeSpan.FromMinutes(15), diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDate_Delta()
         {
             var provider = new DiffProvider();
@@ -32,7 +32,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(TimeSpan.FromMinutes(15), diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Dates_AreSame()
         {
             var provider = new DiffProvider();
@@ -43,7 +43,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Strings_AreDifferent()
         {
             var provider = new DiffProvider();
@@ -59,7 +59,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("Peter", deltas.Deletions.Skip(1).First());
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Strings_AreSame()
         {
             var provider = new DiffProvider();
@@ -70,7 +70,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Guids_AreDifferent()
         {
             var provider = new DiffProvider();
@@ -85,7 +85,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("000000000001", deltas.Deletions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableGuids_AreDifferent()
         {
             var provider = new DiffProvider();
@@ -100,7 +100,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("000000000001", deltas.Deletions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Guids_AreSame()
         {
             var provider = new DiffProvider();
@@ -112,7 +112,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableGuids_AreSame()
         {
             var provider = new DiffProvider();

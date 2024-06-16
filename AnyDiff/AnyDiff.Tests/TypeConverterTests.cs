@@ -1,5 +1,5 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +7,10 @@ using System.Text;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class TypeConverterTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_TimeSpanDifference_UsingTypeConverter()
         {
             var provider = new DiffProvider();
@@ -22,7 +22,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(TimeSpan.FromMinutes(1), diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldNotDetect_TimeSpanDifference_WithoutTypeConverter()
         {
             var provider = new DiffProvider();

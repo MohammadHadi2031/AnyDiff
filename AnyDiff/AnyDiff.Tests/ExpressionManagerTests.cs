@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class ExpressionManagerTests
     {
-        [Test]
+        [TestMethod]
         public void Should_CreatePath_BasicExpression()
         {
             var manager = new ExpressionManager();
@@ -19,7 +19,7 @@ namespace AnyDiff.Tests
             CollectionAssert.AreEqual(new[] { ".Id" }, paths);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_CreatePath_WithChildrenRoot()
         {
             var manager = new ExpressionManager();
@@ -32,7 +32,7 @@ namespace AnyDiff.Tests
             CollectionAssert.AreEqual(new[] { ".Id", ".Name", ".Children" }, paths);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_CreatePath_WithChildrenFirst()
         {
             var manager = new ExpressionManager();
@@ -43,7 +43,7 @@ namespace AnyDiff.Tests
             CollectionAssert.AreEqual(new[] { ".Children.BasicChild.BasicChildId" }, paths);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_CreatePath_WithChildrenSubselect()
         {
             var manager = new ExpressionManager();
@@ -56,7 +56,7 @@ namespace AnyDiff.Tests
             CollectionAssert.AreEqual(new[] { ".Id", ".Name", ".Children.BasicChild.BasicChildId" }, paths);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_CreatePath_WithDeepSubselect()
         {
             var manager = new ExpressionManager();
@@ -76,7 +76,7 @@ namespace AnyDiff.Tests
                 ".BasicChild.Children.Children.BasicChildName"}, paths);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_CreatePath_WithDeepFirst()
         {
             var manager = new ExpressionManager();
@@ -88,7 +88,7 @@ namespace AnyDiff.Tests
                 ".BasicChild.Children.Children.BasicChildName"}, paths);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_IncludeOnly_DeepPath()
         {
             var manager = new ExpressionManager();

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AnyDiff.Extensions;
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+    [TestClass]
     class PathTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ArrayIndex_InPath()
         {
             var obj1 = new A();
@@ -22,7 +23,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(".bs[0].cs[0].ii[2]", diff.First().Path);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ArrayIndex_InPath_WhenSizeIsDifferent()
         {
             var obj1 = new A();
@@ -35,7 +36,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(".bs[0].cs[0].ii[5]", diff.ElementAt(1).Path);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ArrayIndex_InPath_WhenSizeIsDifferent2()
         {
             var obj1 = new A();
@@ -48,7 +49,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(".bs[0].cs[0].ii[2]", diff.ElementAt(1).Path);
         }
 
-        //[Test]
+        //[TestMethod]
         //public void ShouldConsiderAbsDiffWhenValueIsFloat()
         //{
         //    var obj1 = new A();

@@ -1,13 +1,13 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class NullableIntegralDeltaTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableInt_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -19,7 +19,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(5, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableInt_AdditionDeltaWithValue()
         {
             var provider = new DiffProvider();
@@ -31,7 +31,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDecimal_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -43,7 +43,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(5M, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDecimal_AdditionDeltaWithValue()
         {
             var provider = new DiffProvider();
@@ -55,7 +55,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4M, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableInt_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -67,7 +67,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-7, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableInt_SubtractionDeltaWithValue()
         {
             var provider = new DiffProvider();
@@ -79,7 +79,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDecimal_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -91,7 +91,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-7M, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDecimal_SubtractionDeltaWithValue()
         {
             var provider = new DiffProvider();

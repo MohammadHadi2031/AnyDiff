@@ -1,7 +1,7 @@
 ﻿using AnyDiff.Tests.TestObjects;
 using AnyDiff.Tests.TestObjects.Complex;
 using Newtonsoft.Json;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -10,10 +10,10 @@ using System.Reflection;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class CollectionTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_Differences()
         {
             var provider = new DiffProvider();
@@ -26,7 +26,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.First().ArrayIndex);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -37,7 +37,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_List_Differences()
         {
             var provider = new DiffProvider();
@@ -50,7 +50,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.First().ArrayIndex);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_List_CountDifferences()
         {
             var provider = new DiffProvider();
@@ -61,7 +61,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_List_CountDifferences2()
         {
             var provider = new DiffProvider();
@@ -72,7 +72,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeEqual_EmptyList_Null()
         {
             var provider = new DiffProvider();
@@ -83,7 +83,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldNotBeEqual_EmptyList_Null()
         {
             var provider = new DiffProvider();
@@ -94,7 +94,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_List_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -105,7 +105,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Dictionary_Differences()
         {
             var provider = new DiffProvider();
@@ -116,7 +116,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Dictionary_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -127,7 +127,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Dictionary_CountDifferences()
         {
             var provider = new DiffProvider();
@@ -138,7 +138,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Dictionary_CountDifferences2()
         {
             var provider = new DiffProvider();
@@ -149,7 +149,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Hashtable_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -164,7 +164,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Hashtable_CountDifferences()
         {
             var provider = new DiffProvider();
@@ -177,10 +177,10 @@ namespace AnyDiff.Tests
             obj2.Add(3, "Test");
 
             var diff = provider.ComputeDiff(obj1, obj2);
-            Assert.Greater(diff.Count, 0);
+            Assert.IsTrue(diff.Count > 0);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Hashtable_CountDifferences2()
         {
             var provider = new DiffProvider();
@@ -193,10 +193,10 @@ namespace AnyDiff.Tests
             obj2.Add(2, "Test");
 
             var diff = provider.ComputeDiff(obj1, obj2);
-            Assert.Greater(diff.Count, 0);
+            Assert.IsTrue(diff.Count > 0);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Hashtable_Differences()
         {
             var provider = new DiffProvider();
@@ -208,10 +208,10 @@ namespace AnyDiff.Tests
             obj2.Add(2, "Test");
 
             var diff = provider.ComputeDiff(obj1, obj2, ComparisonOptions.All, "._keys", "._buckets");
-            Assert.Greater(diff.Count, 0);
+            Assert.IsTrue(diff.Count > 0);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_OutOfOrder_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -222,7 +222,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_OutOfOrder_LeftDifferences()
         {
             var provider = new DiffProvider();
@@ -233,7 +233,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_OutOfOrder_RightDifferences()
         {
             var provider = new DiffProvider();
@@ -244,7 +244,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_OutOfOrder_LeftAdditionalElements()
         {
             var provider = new DiffProvider();
@@ -255,7 +255,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_OutOfOrder_RightAdditionalElements()
         {
             var provider = new DiffProvider();
@@ -266,7 +266,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Array_OutOfOrder_DifferentCount()
         {
             var provider = new DiffProvider();
@@ -277,7 +277,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ReadOnlyCollection_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -297,7 +297,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ReadOnlyCollection_CustomEquals_AreDifferent()
         {
             var provider = new DiffProvider();
@@ -314,10 +314,10 @@ namespace AnyDiff.Tests
             var diff = provider.ComputeDiff<ReadOnlyCollectionObject>(obj1, obj2, ComparisonOptions.All | ComparisonOptions.IncludeList | ComparisonOptions.AllowCollectionsToBeOutOfOrder | ComparisonOptions.AllowEqualsOverride,
                     x => x.Collection);
 
-            Assert.Greater(diff.Count, 0);
+            Assert.IsTrue(diff.Count > 0);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ReadOnlyCollection_AreDifferent()
         {
             var provider = new DiffProvider();
@@ -334,10 +334,10 @@ namespace AnyDiff.Tests
             var diff = provider.ComputeDiff<ReadOnlyCollectionObject>(obj1, obj2, ComparisonOptions.All | ComparisonOptions.IncludeList | ComparisonOptions.AllowEqualsOverride,
                     x => x.Collection);
 
-            Assert.Greater(diff.Count, 0);
+            Assert.IsTrue(diff.Count > 0);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ReadOnlyCollection_OutOfOrder_AreDifferent()
         {
             var provider = new DiffProvider();
@@ -354,10 +354,10 @@ namespace AnyDiff.Tests
             var diff = provider.ComputeDiff<ReadOnlyCollectionObject>(obj1, obj2, ComparisonOptions.All | ComparisonOptions.IncludeList | ComparisonOptions.AllowCollectionsToBeOutOfOrder | ComparisonOptions.AllowEqualsOverride,
                     x => x.Collection);
 
-            Assert.Greater(diff.Count, 0);
+            Assert.IsTrue(diff.Count > 0);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ComplexJson_AllowOutOfOrder_NoDifferences()
         {
             var provider = new DiffProvider();
@@ -383,7 +383,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ComplexJson_OutOfOrder_HasDifferences()
         {
             var provider = new DiffProvider();
@@ -409,7 +409,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ComplexJson_IncludeList()
         {
             var provider = new DiffProvider();

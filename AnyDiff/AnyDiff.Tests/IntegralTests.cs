@@ -1,12 +1,12 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class IntegralTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Bools_AreSame()
         {
             var provider = new DiffProvider();
@@ -17,7 +17,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Bools_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -28,7 +28,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Bytes_AreSame()
         {
             var provider = new DiffProvider();
@@ -39,7 +39,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Bytes_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -50,7 +50,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_SBytes_AreSame()
         {
             var provider = new DiffProvider();
@@ -61,7 +61,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_SBytes_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -72,7 +72,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Shorts_AreSame()
         {
             var provider = new DiffProvider();
@@ -83,7 +83,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Shorts_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -94,7 +94,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_UShorts_AreSame()
         {
             var provider = new DiffProvider();
@@ -105,7 +105,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_UShorts_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -116,7 +116,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Integers_AreSame()
         {
             var provider = new DiffProvider();
@@ -127,7 +127,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Integers_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -138,7 +138,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_UIntegers_AreSame()
         {
             var provider = new DiffProvider();
@@ -149,7 +149,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_UIntegers_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -160,7 +160,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Longs_AreSame()
         {
             var provider = new DiffProvider();
@@ -171,7 +171,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Longs_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -182,7 +182,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ULongs_AreSame()
         {
             var provider = new DiffProvider();
@@ -193,7 +193,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_ULongs_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -204,7 +204,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Floats_AreSame()
         {
             var provider = new DiffProvider();
@@ -215,7 +215,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Floats_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -226,7 +226,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Doubles_AreSame()
         {
             var provider = new DiffProvider();
@@ -237,7 +237,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Doubles_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -248,7 +248,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Decimals_AreSame()
         {
             var provider = new DiffProvider();
@@ -259,7 +259,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Decimals_AreNotSame()
         {
             var provider = new DiffProvider();

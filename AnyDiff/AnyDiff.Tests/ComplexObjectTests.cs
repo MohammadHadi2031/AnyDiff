@@ -1,13 +1,13 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class ComplexObjectTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NoDifferences_ComplexObject()
         {
             var date = new DateTime(2018, 12, 1, 5, 1, 30);
@@ -27,7 +27,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Differences_ComplexObject()
         {
             var date = new DateTime(2018, 12, 1, 5, 1, 30);
@@ -49,7 +49,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(5, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NoDifferences_CircularReferences()
         {
             var obj1 = new CircularReferenceObject(100);
@@ -61,7 +61,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Differences_CircularReferences()
         {
             var obj1 = new CircularReferenceObject(100);

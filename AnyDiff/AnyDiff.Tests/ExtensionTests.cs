@@ -1,14 +1,14 @@
 ﻿using AnyDiff.Extensions;
 using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class ExtensionTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1) };
@@ -18,7 +18,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithOptions()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1) };
@@ -28,7 +28,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithIgnorePaths()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1), BoolValue = true };
@@ -38,7 +38,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithOptionsIgnorePaths()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1), BoolValue = true };
@@ -48,7 +48,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithMaxDepthOptionsIgnorePaths()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1), BoolValue = true };
@@ -58,7 +58,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithIgnoreExpression()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1), BoolValue = true };
@@ -68,7 +68,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithOptionsIgnoreExpression()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1), BoolValue = true };
@@ -78,7 +78,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_TwoObjects_WithMaxDepthOptionsIgnoreExpression()
         {
             var obj1 = new TestObject { DateValue = new DateTime(2018, 05, 05, 1, 1, 1), BoolValue = true };

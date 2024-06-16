@@ -2,14 +2,14 @@
 using System.Linq;
 using AnyDiff.Extensions;
 using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class IgnoreTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldExclude_ByPropertyList()
         {
             var object1 = new MyComplexObject(1, "A string", true);
@@ -19,7 +19,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldExclude_ChildrenByPropertyList()
         {
             var object1 = new ComplexObjectWithListChildren(1, "A string",
@@ -47,7 +47,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldExclude_OneChildByPropertyList()
         {
             var object1 = new ComplexObjectWithListChildren(1, "A string",
@@ -71,7 +71,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldExclude_ByPropertyNameList()
         {
             var object1 = new MyComplexObject(1, "A string", true);
@@ -81,7 +81,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldExclude_ByPropertyPathList()
         {
             var object1 = new MyComplexObject(1, "A string", new Location(49.282730, -123.120735));
@@ -91,7 +91,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ByPropertyList()
         {
             var object1 = new MyComplexObject(1, "A string", new Location(49.282730, -123.120735));
@@ -101,7 +101,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ByPropertyPathList()
         {
             var object1 = new MyComplexObject(1, "A string", new Location(49.282730, -123.120735));
@@ -111,7 +111,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ByPropertyPathList2()
         {
             var object1 = new Person {
@@ -131,7 +131,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(2, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_ByPropertyNameList()
         {
             var object1 = new MyComplexObject(1, "A string", new Location(49.282730, -123.120735));
@@ -141,7 +141,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_AllChildren()
         {
             var object1 = new ComplexObjectWithListChildren(1, "A string",
@@ -165,7 +165,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldInclude_AllChildren_NoInheritance()
         {
             var object1 = new ComplexObjectWithListChildren(1, "A string",
@@ -193,7 +193,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(3, diff.First().RightValue);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldIgnore_ByAttribute()
         {
             var object1 = new MyComplexIgnoreAttributeObject(1, "A string", true);
@@ -203,7 +203,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDisable_IgnoreByAttribute()
         {
             var object1 = new MyComplexIgnoreAttributeObject(1, "A string", true);
@@ -213,7 +213,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_IgnoreByCustomAttribute()
         {
             var object1 = new CustomAttributeObject(1, "A string");
@@ -224,7 +224,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_IgnoreByCustomAttributeName()
         {
             var object1 = new CustomAttributeObject(1, "A string");
@@ -235,7 +235,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_IncludeOnly_DeepPath()
         {
             var provider = new DiffProvider();
@@ -250,7 +250,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(".DeepChildObject.DeepChild2Object.DeepChild3Object.Name", diff.First().Path);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_IncludeOnly_DeepPath2()
         {
             var provider = new DiffProvider();

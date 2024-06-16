@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnyDiff;
 using System;
 using System.Collections.Generic;
@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class DifferenceLinesTests
     {
-        [Test]
+        [TestMethod]
         public void Should_Detect_LineDifference()
         {
             var diff = DifferenceLines.DiffLines("Lorem ipsum dolor sit amet.", "Lorem ipsum dolor amet.");
@@ -19,7 +19,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("Lorem ipsum dolor amet.", diff.Additions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Detect_LineDifferenceTrimWhitespace()
         {
             var diff = DifferenceLines.DiffLines("  Lorem ipsum dolor sit amet.", "Lorem ipsum dolor amet.", true, false, false);
@@ -28,7 +28,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("Lorem ipsum dolor amet.", diff.Additions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Detect_LineDifferenceIgnoringWhitespace()
         {
             var diff = DifferenceLines.DiffLines("  Lorem  ipsum dolor    sit amet.", "Lorem ipsum dolor amet.", false, true, false);
@@ -37,7 +37,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("Lorem ipsum dolor amet.", diff.Additions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Detect_LineDifferenceIgnoringCase()
         {
             var diff = DifferenceLines.DiffLines("lorem ipsum Dolor sit Amet.", "Lorem ipsum dolor amet.", false, false, true);
@@ -46,14 +46,14 @@ namespace AnyDiff.Tests
             Assert.AreEqual("Lorem ipsum dolor amet.", diff.Additions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Detect_IntsDifference()
         {
             var diff = DifferenceLines.DiffInt(new [] { 1, 2, 3 }, new[] { 1, 4, 3 });
             Assert.AreEqual(1, diff.Length);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Detect_IntsNoDifference()
         {
             var diff = DifferenceLines.DiffInt(new[] { 1, 2, 3 }, new[] { 1, 2, 3 });

@@ -2,14 +2,16 @@
 using System.Linq;
 using AnyDiff.Tests.TestObjects;
 using AnyDiff.Tests.TestObjects.Abstract;
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class AbstractTypeTests
     {
-        [Test]
+        [TestMethod]
         public void If_BaseType_Is_Abstract_And_Both_Objects_Implement_Then_Should_Emit_Whole_Object_If_Types_Different()
         {
 

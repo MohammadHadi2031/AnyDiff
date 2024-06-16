@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Drawing;
 using Newtonsoft.Json.Linq;
 using TypeSupport.Extensions;
@@ -8,10 +8,10 @@ using Microsoft.TeamFoundation.Build.WebApi;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class ExternalObjectTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NoDifferences_Point()
         {
             var obj1 = new Point(100, 200);
@@ -21,7 +21,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Differences_Point()
         {
             var obj1 = new Point(100, 200);
@@ -31,7 +31,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NoDifferences_TestFixtureData()
         {
             var obj1 = new TestFixtureData(new { Field1 = "Test" });
@@ -41,7 +41,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Differences_TestFixtureData()
         {
             var obj1 = new TestFixtureData(new { Field1 = "Test" });
@@ -51,7 +51,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDiff_JToken()
         {
             var obj1 = JToken.Parse(@"{ ""list"": [""test1"", ""test2""] }");
@@ -61,7 +61,7 @@ namespace AnyDiff.Tests
         }
 
 #if !NET40
-        [Test]
+        [TestMethod]
         public void ShouldDiff_BuildDefinition()
         {
             var obj1 = new BuildDefinition() {

@@ -1,13 +1,13 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class NullableIntegralTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableBools_AreSame()
         {
             var provider = new DiffProvider();
@@ -18,7 +18,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableBools_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -29,7 +29,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableBytes_AreSame()
         {
             var provider = new DiffProvider();
@@ -40,7 +40,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableBytes_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -51,7 +51,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableShorts_AreSame()
         {
             var provider = new DiffProvider();
@@ -62,7 +62,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableShorts_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -73,7 +73,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableIntegers_AreSame()
         {
             var provider = new DiffProvider();
@@ -84,7 +84,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableIntegers_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -95,7 +95,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableLongs_AreSame()
         {
             var provider = new DiffProvider();
@@ -106,7 +106,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableLongs_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -117,7 +117,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableFloats_AreSame()
         {
             var provider = new DiffProvider();
@@ -128,7 +128,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableFloats_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -139,7 +139,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDoubles_AreSame()
         {
             var provider = new DiffProvider();
@@ -150,7 +150,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDoubles_AreNotSame()
         {
             var provider = new DiffProvider();
@@ -161,7 +161,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(1, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDecimals_AreSame()
         {
             var provider = new DiffProvider();
@@ -172,7 +172,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(0, diff.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_NullableDecimals_AreNotSame()
         {
             var provider = new DiffProvider();

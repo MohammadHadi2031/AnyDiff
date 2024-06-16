@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnyDiff;
 using System;
 using System.Collections.Generic;
@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class DifferenceWordsTests
     {
-        [Test]
+        [TestMethod]
         public void Should_Detect_WordDifference()
         {
             var diff = DifferenceWords.DiffWords("Lorem ipsum dolor sit amet", "Lorem ipsum dolor amet");
@@ -20,7 +20,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual("sit", diff.Deletions.First());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Detect_WordDifferenceIgnoreCase()
         {
             var diff = DifferenceWords.DiffWords("lorem ipsum Dolor sit amet", "Lorem ipsum dolor amet", true);

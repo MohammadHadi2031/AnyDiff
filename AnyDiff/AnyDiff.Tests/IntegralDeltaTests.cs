@@ -1,13 +1,13 @@
 ﻿using AnyDiff.Tests.TestObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
 namespace AnyDiff.Tests
 {
-    [TestFixture]
+   [TestClass]
     public class IntegralDeltaTests
     {
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Byte_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -19,7 +19,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Byte_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -31,7 +31,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Short_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -43,7 +43,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Short_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -55,7 +55,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Int_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -67,7 +67,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Int_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -79,7 +79,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Long_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -91,7 +91,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Long_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -103,7 +103,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5L, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Float_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -115,7 +115,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4F, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Float_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -127,7 +127,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5F, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Double_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -139,7 +139,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4.0, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Double_SubtractionDelta()
         {
             var provider = new DiffProvider();
@@ -151,7 +151,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(-5.0, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Decimal_AdditionDelta()
         {
             var provider = new DiffProvider();
@@ -163,7 +163,7 @@ namespace AnyDiff.Tests
             Assert.AreEqual(4M, diff.First().Delta);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldDetect_Decimal_SubtractionDelta()
         {
             var provider = new DiffProvider();
